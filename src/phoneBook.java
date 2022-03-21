@@ -18,9 +18,7 @@ import javafx.scene.control.ListView;
 public class phoneBook {
 	
 	private static HashMap<String,String> h = new HashMap<String,String>();
-	
 	private static HashMap<String,String> h1 = new HashMap<String,String>();
-	
 	public static void initiate() {
 		Person p1 = new Person("loai abu yosef" , "0525655466");
 		Person p2 = new Person("program abu yosef" , "0525555555");
@@ -39,18 +37,14 @@ public class phoneBook {
 	}
 	
 	public static void loadFromFile() {
-
 		File file = getFile();
-
 		if (file != null) {
 			try {
-
 				FileInputStream fi = new FileInputStream(file);
 				ObjectInputStream ois = new ObjectInputStream(fi);
 				h1 = (HashMap<String, String>)ois.readObject();
 				ois.close();
 				fi.close();
-
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -62,9 +56,7 @@ public class phoneBook {
 	}
 	
 	public static void saveToFile() {
-
 		File file = getFile();
-
 		try {
 			FileOutputStream fo = new FileOutputStream(file);
 			ObjectOutputStream out = new ObjectOutputStream(fo);
@@ -90,11 +82,9 @@ public class phoneBook {
 	}
 
 	public static void load(ListView<String> list) {
-	
 		list.getItems().clear();
 		loadFromFile();
 		for (Map.Entry mapElement : h1.entrySet()) {
-			
 			String s = (String) mapElement.getKey();
 			String space = getSpace(s);
 			list.getItems().add("\t\t" + (String)mapElement.getKey() + space + "\t\t\t\t\t" + (String)mapElement.getValue());
@@ -120,13 +110,12 @@ public class phoneBook {
 		return null;
 	}
 
-	public static void infoBox(String infoMessage, String titleBar)
-    {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle(titleBar);
-        alert.setContentText(infoMessage);
-        alert.showAndWait();
-    }
+	public static void infoBox(String infoMessage, String titleBar){
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(titleBar);
+		alert.setContentText(infoMessage);
+		alert.showAndWait();
+   	 }
 
     public static void errorInfoBox(String infoMessage , String headerMessage) {
     	Alert errorAlert = new Alert(AlertType.ERROR);
