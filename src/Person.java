@@ -2,7 +2,6 @@ public class Person {
 	
 	private String fullName;
 	private String phoneNumber;
-	
 	public Person(String fullName, String phoneNumber) {
 		super();
 		this.fullName = fullName;
@@ -21,9 +20,4 @@ public class Person {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
-	
-	
-	
-	
 }
