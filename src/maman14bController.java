@@ -96,7 +96,6 @@ public class maman14bController {
     			break;
     		}
     	}
-   
     	char[] ke = new char[i];
     	while(j<i) {
     		ke[j] = ch[j];
@@ -144,18 +143,16 @@ public class maman14bController {
     			phoneBook.errorInfoBox("The phone number must be 10 digits!! , please insert again.", "Input not valid");
     		}
     	}
-    	
     	else {
     		phoneBook.errorInfoBox("missing info!! , please insert again.", "Input not valid");
     	}
     }
 
-	private void addClosingEvent() {
-		Stage stage = (Stage)((Node) vbox).getScene().getWindow();
-		stage.getScene().getWindow().addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, event1 -> {
+    private void addClosingEvent() {
+	Stage stage = (Stage)((Node) vbox).getScene().getWindow();
+	stage.getScene().getWindow().addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, event1 -> {
 
-			phoneBook.saveToFile();
-		});	
-	}
-
+		phoneBook.saveToFile();
+	});	
+    }
 }
